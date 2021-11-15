@@ -14,7 +14,7 @@ public class ClockPannel extends JPanel implements ActionListener// implement ac
 	private JButton reset;
 	private JButton stop;
 	
-	private Timer myTimer = new Timer(1000, this);//as it is in milliseconds
+	private Timer myTimer = new Timer(1, this);//as it is in milliseconds
 	public ClockPannel()
 	{
 		myTimer.start();// starts timer
@@ -79,7 +79,7 @@ public class ClockPannel extends JPanel implements ActionListener// implement ac
 			start.setBackground(Color.RED);
 			stop.setBackground(Color.BLUE);
 			myTimer.stop();
-			myclock.setTime(0,  0, 0);
+			myclock.setTime(0,  0, 0, 0);
 
 
 			

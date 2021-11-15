@@ -4,6 +4,7 @@ public class Clock
 	private int minutes;// PRIVATE MEANS YOU CAN ONLY ACCESS IT IN THIS CLASSS
 	private int seconds;
 	private int hours;
+	private int milliseconds;
 
 
 	//methods
@@ -15,7 +16,16 @@ public class Clock
 	
 	public void increment(int s) 	
 	{
-		seconds  +=1; // adds 5 seconds to the variable
+		
+		
+		milliseconds  +=1; // adds 5 seconds to the variable
+		
+		while (milliseconds >= 100)
+		{
+			seconds +=1;
+			milliseconds -=100;
+		}
+		
 		while (seconds >= 60) //it while loop 
 		{
 			minutes +=1;
@@ -35,11 +45,12 @@ public class Clock
 		increment(1); // make sure it's compatible
 	}
 	
-	public void setTime(int h, int m, int s) // gave name as s, h and m
+	public void setTime(int h, int m, int s, int ms) // gave name as s, h and m
 	{
 		hours = h;
 		minutes = m;
 		seconds = s;
+		milliseconds = ms;
 	}//end of setTime
 	
 	public String getTime() 
@@ -47,6 +58,12 @@ public class Clock
 		String s = "";
 		String m = "";
 		String h = "";
+		String ms = "";
+		if (milliseconds < 10)
+		{
+			ms = "0";
+		}
+		
 		if (seconds < 10) 
 		{
 			s = "0";
@@ -61,7 +78,7 @@ public class Clock
 		{
 			h = "0";
 		}
-		return h + hours +  ":" + m + minutes + ":" + s + seconds;
+		return h + hours +  ":" + m + minutes + ":" + s + seconds + ":" + ms + milliseconds;
 	}
 	
 	
