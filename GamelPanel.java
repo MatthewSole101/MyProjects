@@ -37,4 +37,3 @@ public class GamelPanel extends JPanel
 	}
 	
 }
-
