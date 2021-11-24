@@ -16,6 +16,7 @@ public class GamelPanel extends JPanel implements ActionListener
     public GamelPanel(JLabel tl)
 
     {
+    	System.out.println("ughghgh");
     	this.mTL = tl;
         this.setLayout(new GridLayout (3,3));
         for(int i=0; i<myTiles.length; i++)
@@ -25,7 +26,7 @@ public class GamelPanel extends JPanel implements ActionListener
             myTiles[i].addActionListener((ActionListener) this);
             myTiles[i].setFocusable(false);
             
-
+                                                                                                                                                                                                                                                                       
         
        }
 
@@ -46,7 +47,7 @@ public class GamelPanel extends JPanel implements ActionListener
 
     public char checkWinner()
     {
-        return ' ';
+      return 'a'; //if(myTiles[i+0].getSymbol() != ' ' && myTiles[i+0].getSymbol() == myTiles[i+1] ! )
     }
     private void switchTurn()//switch what symbol shows on tiles once pressed
     {
@@ -57,12 +58,12 @@ public class GamelPanel extends JPanel implements ActionListener
     		myReturn = 'X';
     	 	//myTiles[i].setText("Current turn  "+myReturn);
     	mTL.setText("Current turn "+myReturn);
-    }
+    }                                                                
 
    public void actionPerformed(ActionEvent a)
    {
 	   Tile clicked = (Tile)a.getSource();
-	   clicked.setText(""+ myReturn);
+	   clicked.setSymbol(myReturn);
 	   switchTurn();
    }
 

@@ -8,7 +8,6 @@ public class Interface extends JPanel
 {
 	JLabel myTurnLabel;
 	GamelPanel gamepaanel;
-	private Tile[] myTiles = new Tile[9];
     public char myReturn = 'X';
    
     
@@ -28,14 +27,6 @@ public class Interface extends JPanel
         }
         
         
-    }
-
-    public void reset()
-    {
-        for(int i=0; i<myTiles.length; i++)
-        {
-            myTiles[i].clear();
-        }
     }
 
     public char getReturn()
