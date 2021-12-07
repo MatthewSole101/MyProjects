@@ -8,7 +8,9 @@ public class Interface extends JPanel
 {
 	JLabel myTurnLabel;
 	GamelPanel gamepaanel;
+	//private woah w1 = new woah
     public char myReturn = 'X';
+    private JTabbedPane nc;
    
     
     public Interface()
@@ -23,6 +25,10 @@ public class Interface extends JPanel
             
             myTurnLabel.setText("Current turn  "+myReturn);
             this.add(myTurnLabel, BorderLayout.NORTH);
+            
+            
+           // nc = new JTabbedPane(JTabbedPane.TOP, JTabbedPane.WRAP_TAB_LAYOUT);
+           // nc.addTab("Richard Tomblin", w1);
             	
         }
         

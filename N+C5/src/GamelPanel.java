@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 
 public class GamelPanel extends JPanel implements ActionListener
 {
-    private Tile[] myTiles = new Tile[9];
+    private Tile[][] myTiles = new Tile[3][3];//
     public char myReturn = 'X';
     JLabel mTL;
 
@@ -19,24 +19,33 @@ public class GamelPanel extends JPanel implements ActionListener
     	System.out.println("ughghgh");
     	this.mTL = tl;
         this.setLayout(new GridLayout (3,3));
-        for(int i=0; i<myTiles.length; i++)
+        for(int y=0; y<myTiles.length; y++)
         {
-            myTiles[i] = new Tile();
-            this.add(myTiles[i]);
-            myTiles[i].addActionListener((ActionListener) this);
-            myTiles[i].setFocusable(false);
+   
             
-                                                                                                                                                                                                                                                                       
+            for (int x=0; x<myTiles[y].length; x++)
+            {
+                    myTiles[y][x] = new Tile(x, y);
+                    this.add(myTiles[y] [x]);
+                    myTiles[y] [x].addActionListener((ActionListener) this);
+                    myTiles[y] [x].setFocusable(false);
+                    
+            }
+        }
         
-       }
+        
 
     }
 
     public void reset()
     {
-        for(int i=0; i<myTiles.length; i++)
+        for(int y=0; y<myTiles.length; y++)
         {
-            myTiles[i].clear();
+           for (int x=0; x<myTiles[y].length; x++)
+           {   
+        	myTiles[y] [x].clear();
+        
+           }
         }
     }
 
@@ -45,10 +54,19 @@ public class GamelPanel extends JPanel implements ActionListener
         return myReturn;
     }
 
-    public char checkWinner()
+    public char checkWinner(int[] coordinates)
     {
-      return 'a'; //if(myTiles[i+0].getSymbol() != ' ' && myTiles[i+0].getSymbol() == myTiles[i+1] ! )
+    
+        for(int y=0; y<myTiles.length; y++)
+        {
+           for (int x=0; x<myTiles[y].length; x++)
+           {   
+        
+        
+           }
+        }
     }
+    
     private void switchTurn()//switch what symbol shows on tiles once pressed
     {
     	if(myReturn == 'X')
@@ -64,6 +82,8 @@ public class GamelPanel extends JPanel implements ActionListener
    {
 	   Tile clicked = (Tile)a.getSource();
 	   clicked.setSymbol(myReturn);
+	   
+	   this.checkWinner(clicked.getCoordinate());
 	   switchTurn();
    }
 
