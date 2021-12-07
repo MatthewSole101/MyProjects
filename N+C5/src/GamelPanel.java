@@ -54,18 +54,26 @@ public class GamelPanel extends JPanel implements ActionListener
         return myReturn;
     }
 
-    public char checkWinner(int[] coordinates)
-    {
-    
-        for(int y=0; y<myTiles.length; y++)
-        {
-           for (int x=0; x<myTiles[y].length; x++)
-           {   
-        
-        
-           }
-        }
-    }
+//    public char checkWinner(int[] coordinates)
+//    {
+////    	Tile t = myTiles[coordinates [0]] [coordinates [1]];
+////    	int [] cw = new int [] {0, 0, 0, 0};//1st Hori 2nd verticle 3rd left diaginal, 4th right diaginal
+//    	 
+//        
+//    	for(int y=0; y<myTiles.length; y++)
+//        {
+//           for (int x=0; x<myTiles[y].length; x++)
+//           {   
+//        	  if (myTiles[y][x].getSymbol() == myReturn)
+//        	  {
+//        		 if (y == t.getCoordinate()[1])
+//        		 {
+//        			 
+//        		 }
+//        	  }
+//           } 
+//        }
+//    }
     
     private void switchTurn()//switch what symbol shows on tiles once pressed
     {
@@ -83,7 +91,7 @@ public class GamelPanel extends JPanel implements ActionListener
 	   Tile clicked = (Tile)a.getSource();
 	   clicked.setSymbol(myReturn);
 	   
-	   this.checkWinner(clicked.getCoordinate());
+//	   this.checkWinner(clicked.getCoordinate());
 	   switchTurn();
    }
 

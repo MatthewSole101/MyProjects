@@ -34,7 +34,7 @@ public class Tile extends JButton
     
     public int [] getCoordinate()
     {
-    	return new int[]{x, y};
+    	return new int[]{y, x};
     	
     }
     
