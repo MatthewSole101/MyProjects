@@ -7,14 +7,16 @@ public class Runner
     {
         // TODO Auto-generated method stub
         JFrame window = new JFrame();
-        GamelPanel clock = new GamelPanel();
-        window.setContentPane(clock);
+        Interface io = new Interface();
+        window.setContentPane(io);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setTitle("Noughts and Crosses");
         window.setSize(400,300);
         window.setVisible(true);
         window.setBackground(Color.black);
-
+        
+        
+       
 
     }
 
