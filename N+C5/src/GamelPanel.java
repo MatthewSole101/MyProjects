@@ -1,4 +1,5 @@
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.*;
 
@@ -16,7 +17,7 @@ public class GamelPanel extends JPanel implements ActionListener
     public GamelPanel(JLabel tl)
 
     {
-    	System.out.println("ughghgh");
+    	System.out.println("Welcome to naughts and crosses");
     	this.mTL = tl;
         this.setLayout(new GridLayout (3,3));
         for(int y=0; y<myTiles.length; y++)
@@ -79,26 +80,34 @@ public class GamelPanel extends JPanel implements ActionListener
     {
     		
 	    	
-    	if (myTiles[0][0].getSymbol() != ' ' &&  myTiles[0][0].getSymbol()== myTiles [0][1].getSymbol() &&  myTiles [0][2].getSymbol() == myTiles[0][0].getSymbol() )
+    	if (myTiles[0][0].getSymbol() != ' ' &&  myTiles[0][0].getSymbol()== myTiles [0][1].getSymbol() &&  myTiles [0][2].getSymbol() == myTiles[0][0].getSymbol() )//row 1
     	{
     		
     		System.out.println("top row winner: "+myTiles[0][0].getSymbol());
     		return (myTiles[0][0].getSymbol());
     	}
     	
-    	if (myTiles[1][0].getSymbol() != ' ' &&  myTiles[1][0].getSymbol()== myTiles [1][1].getSymbol() &&  myTiles [1][2].getSymbol() == myTiles[1][0].getSymbol() )
+    	if (myTiles[1][0].getSymbol() != ' ' &&  myTiles[1][0].getSymbol()== myTiles [1][1].getSymbol() &&  myTiles [1][2].getSymbol() == myTiles[1][0].getSymbol() )//row 2
     	{
     		
     		System.out.println("Middle row winner!!: "+myTiles[1][0].getSymbol());
     		return (myTiles[1][0].getSymbol());
     	}
     	
-    	if (myTiles[2][0].getSymbol() != ' ' &&  myTiles[2][0].getSymbol()== myTiles [2][1].getSymbol() &&  myTiles [2][2].getSymbol() == myTiles[2][0].getSymbol() )
+    	if (myTiles[2][0].getSymbol() != ' ' &&  myTiles[2][0].getSymbol()== myTiles [2][1].getSymbol() &&  myTiles [2][2].getSymbol() == myTiles[2][0].getSymbol() )// row 3
     	{
     		
     		System.out.println("Bottom row winner: "+myTiles[2][0].getSymbol());
     		return (myTiles[2][0].getSymbol());
     	}
+    	
+    	if (myTiles[0][2].getSymbol() != ' ' &&  myTiles[0][2].getSymbol()== myTiles [1][2].getSymbol() &&  myTiles [2][2].getSymbol() == myTiles[0][2].getSymbol() )// row 3
+    	{
+    		
+    		System.out.println("Right column winner: "+myTiles[2][0].getSymbol());
+    		return (myTiles[2][0].getSymbol());
+    	}
+    	
     	
     	
     	
@@ -123,6 +132,8 @@ public class GamelPanel extends JPanel implements ActionListener
 	   clicked.setSymbol(myReturn);
 	   clicked.getCoordinate(); 
 	   int [] Cd = clicked.getCoordinate();
+	   
+	   myTiles[][].setBackground(Color.BLUE);
 	   
 	   
 	   this.checkWinner();
