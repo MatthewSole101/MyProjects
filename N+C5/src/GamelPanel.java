@@ -91,29 +91,73 @@ public class GamelPanel extends JPanel implements ActionListener
 		    		return (myTiles[0][0].getSymbol());
 		    	}
 		    	
-		    	if ( myTiles[0][2].getSymbol()== myTiles [1][2].getSymbol() &&  myTiles [2][2].getSymbol() == myTiles[0][2].getSymbol() )// row 3
+		    	if ( myTiles[0][0].getSymbol()== myTiles [1][0].getSymbol() &&  myTiles [2][0].getSymbol() == myTiles[0][0].getSymbol() )// row 3
 		    	{
 		    		
-		    		System.out.println("Right column winner: "+myTiles[2][0].getSymbol());
-		    		return (myTiles[0][2].getSymbol());
+		    		System.out.println("Left column winner: "+myTiles[2][0].getSymbol());
+		    		return (myTiles[0][0].getSymbol());
 		    	}
 	    
 	    }
 	    
-	    	
-	    	if (myTiles[1][0].getSymbol() != ' ' &&  myTiles[1][0].getSymbol()== myTiles [1][1].getSymbol() &&  myTiles [1][2].getSymbol() == myTiles[1][0].getSymbol() )//row 2
-	    	{
-	    		
-	    		System.out.println("Middle row winner!!: "+myTiles[1][0].getSymbol());
-	    		return (myTiles[1][0].getSymbol());
-	    	}
-	    	
-	    	if (myTiles[2][0].getSymbol() != ' ' &&  myTiles[2][0].getSymbol()== myTiles [2][1].getSymbol() &&  myTiles [2][2].getSymbol() == myTiles[2][0].getSymbol() )// row 3
+	    if (myTiles[2][2].getSymbol() == 'X'|myTiles[2][2].getSymbol() == 'O' ) 
+	    {
+	    	if ( myTiles[2][0].getSymbol()== myTiles [2][1].getSymbol() &&  myTiles [2][2].getSymbol() == myTiles[2][0].getSymbol() )// row 3
 	    	{
 	    		
 	    		System.out.println("Bottom row winner: "+myTiles[2][0].getSymbol());
 	    		return (myTiles[2][0].getSymbol());
+	    	
 	    	}
+	    	
+	    	
+	    	if ( myTiles[0][2].getSymbol()== myTiles [1][2].getSymbol() &&  myTiles [2][2].getSymbol() == myTiles[0][2].getSymbol() )// row 3
+	    	{
+	    		
+	    		System.out.println("Right column winner: "+myTiles[0][2].getSymbol());
+	    		return (myTiles[0][2].getSymbol());
+	    	}
+    	
+	    }
+	    
+	    if (myTiles[1][1].getSymbol() == 'X'| myTiles[1][1].getSymbol() == 'O')
+	    {
+	    	if (myTiles[0][1].getSymbol() == myTiles[1][1].getSymbol() && myTiles[2][1].getSymbol() == myTiles[0][1].getSymbol() )
+	    	{
+	    		System.out.println("Top Middle row winner :" +myTiles[0][1].getSymbol());
+	    		return(myTiles[0][1].getSymbol());
+	    	
+	    	}
+	    	
+		    if (myTiles[1][0].getSymbol()== myTiles [1][1].getSymbol() &&  myTiles [1][2].getSymbol() == myTiles[1][0].getSymbol() )//row 2
+	    	{
+	    		
+	    		System.out.println("Middle row winner!!: "+myTiles[1][0].getSymbol());//Horisontal
+	    		return (myTiles[1][0].getSymbol());
+	    	)
+
+			if (myTiles[0][2].getSymbol() == myTiles[1][1].getSymbol() && myTiles[2][0].getSymbol() == myTiles[0][2].getSymbol())
+			{
+				System.out.println("Middle row winner!!: "+myTiles[0][2].getSymbol());//Horisontal
+	    		return (myTiles[0][2].getSymbol());
+
+			}
+	    }
+	    	
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    if (myTiles[1][0].getSymbol() != ' ' &&  myTiles[1][0].getSymbol()== myTiles [1][1].getSymbol() &&  myTiles [1][2].getSymbol() == myTiles[1][0].getSymbol() )//row 2
+	    	{
+	    		
+	    		System.out.println("Middle row winner!!: "+myTiles[1][0].getSymbol());//Horisontal
+	    		return (myTiles[1][0].getSymbol());
+	    	}
+	    	
 	    	
 	    	if (myTiles[0][2].getSymbol() != ' ' &&  myTiles[0][2].getSymbol()== myTiles [1][2].getSymbol() &&  myTiles [2][2].getSymbol() == myTiles[0][2].getSymbol() )// row 3
 	    	{
