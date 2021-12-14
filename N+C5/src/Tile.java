@@ -7,12 +7,24 @@ public class Tile extends JButton
     private boolean isAvailable = false;
     private int y;
     private int x;
+    
+    
+    public Tile(int x, int y)
+    {
+    	this.x = x;
+    	this.y = y;
+    	this.setSymbol('n');
+    }
 
+    
+    
+    
     public void setSymbol(char s)
     {
         mySymbol=s;
         this.setText(""+s);
-        this.setEnabled(false);
+        //this.setEnabled(false);
+        
     }
 
     public char getSymbol()
@@ -23,14 +35,10 @@ public class Tile extends JButton
     public void clear()
     {
         mySymbol = ' ';
-        this.setText("");
+        this.setText(" ");
     }
 
-    public Tile(int x, int y)
-    {
-    	this.x = x;
-    	this.y = y;
-    }
+
     
     public int [] getCoordinate()
     {
