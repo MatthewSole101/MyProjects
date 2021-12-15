@@ -7,6 +7,7 @@ public class Runner
     {
         // TODO Auto-generated method stub
         JFrame window = new JFrame();
+//        JFrame window = new JFrame();
         Interface io = new Interface();
         window.setContentPane(io);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
