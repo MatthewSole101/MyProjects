@@ -1,21 +1,29 @@
 import java.awt.BorderLayout;
+import javax.sound.sampled.*;
 import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.*;
+import java.io.File;
+//import java.io.File;
+//import java.io.IOException;
+import java.util.Scanner;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 
-public class GamelPanel extends JPanel implements ActionListener
+
+public class GamelPanel extends JPanel implements ActionListener 
 {
     private Tile[][] myTiles = new Tile[3][3];//
     public char myReturn = 'X';
     JLabel mTL;
     private JButton reset;
     private boolean isWinner = false;
+    
 
+    
 
     public GamelPanel(JLabel tl)
 
@@ -52,9 +60,60 @@ public class GamelPanel extends JPanel implements ActionListener
 //		
 //		this.add(buttonpanel, BorderLayout.SOUTH);
 
-        
+       
         
 
+    }
+    
+//    public void sound(String[] args0) throws UnsupportedAudioFileException, IOException, LineUnavailableException 
+//    {
+//        File file = new File("Vic.mp3");
+//        AudioInputStream audiostream = AudioSystem.getAudioInputStream(file);
+//        Clip clip = AudioSystem.getClip();
+//        clip.open(audiostream);
+//        if (isWinner = true)
+//        		{
+//        			Scanner scanner = new Scanner(System.in);
+//        			
+//        			System.out.println("play");
+//        			
+//        	
+//        			clip.start();
+//        		}
+//        clip.start();
+        
+        
+//    }
+    
+    public void makeSound()
+    {
+    	File file = new File("Vic.wav");
+    	
+    	try
+    	{
+    		Clip clip = AudioSystem.getClip();
+    		clip.open(AudioSystem.getAudioInputStream(file));
+    		clip.start();
+    	}catch (Exception e) {
+    		e.printStackTrace();
+    		
+
+    	}
+    }
+    
+    public void makeSoundClick()
+    {
+    	File file2 = new File("click.wav");
+    	
+    	try
+    	{
+    		Clip clip2 = AudioSystem.getClip();
+    		clip2.open(AudioSystem.getAudioInputStream(file2));
+    		clip2.start();
+    	}catch (Exception e) 
+    	{
+    		e.printStackTrace();
+    	}
     }
 
     public void reset()
@@ -187,24 +246,7 @@ public class GamelPanel extends JPanel implements ActionListener
 	    
 	    
 	    
-//	    
-//	    
-//	    if (myTiles[1][0].getSymbol() != ' ' &&  myTiles[1][0].getSymbol()== myTiles [1][1].getSymbol() &&  myTiles [1][2].getSymbol() == myTiles[1][0].getSymbol() )//row 2
-//	    	{
-//	    		
-//	    		System.out.println("Middle row winner!!: "+myTiles[1][0].getSymbol());//Horisontal
-//	    		return (myTiles[1][0].getSymbol());
-//	    	}
-//	    	
-//	    	
-//	    	if (myTiles[0][2].getSymbol() != ' ' &&  myTiles[0][2].getSymbol()== myTiles [1][2].getSymbol() &&  myTiles [2][2].getSymbol() == myTiles[0][2].getSymbol() )// row 3
-//	    	{
-//	    		
-//	    		System.out.println("Right column winner: "+myTiles[2][0].getSymbol());
-//	    		return (myTiles[2][0].getSymbol());
-//	    	}
-//    	
-//    	
+
     	
     	
     	
@@ -228,6 +270,8 @@ public class GamelPanel extends JPanel implements ActionListener
     	
     	if(isWinner = true)
     	{
+    		makeSound();
+    		
     		myTiles[0][0].setBackground(Color.GREEN);
     		myTiles[0][1].setBackground(Color.GREEN);
     		myTiles[0][2].setBackground(Color.GREEN);
@@ -245,10 +289,11 @@ public class GamelPanel extends JPanel implements ActionListener
    {
 	   Tile clicked = (Tile)a.getSource();
 	   clicked.setSymbol(myReturn);
-	   clicked.getCoordinate(); 
+	   clicked.getCoordinate(); 	
 	   int [] Cd = clicked.getCoordinate();
 	   
 	   clicked.setBackground(Color.RED);
+	   makeSoundClick();
  	   
 	   this.checkWinner();
 	   switchTurn();
