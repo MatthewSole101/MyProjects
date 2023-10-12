@@ -8,8 +8,7 @@ returnday = inp + inp2
 if returnday <= 6:
     print('You will return on the', days[returnday])
 elif returnday > 6:
-    day = returnday % 6
+    day = returnday % 7
     print('You will return on the', days[day])
 
 
-    
