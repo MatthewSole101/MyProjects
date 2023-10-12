@@ -11,5 +11,5 @@ while count != length:
     answer = numi+answer
     count = count + 1
 else:
-    answer = answer + 1
+
     print('Your total is', answer)
