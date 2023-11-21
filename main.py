@@ -1,16 +1,20 @@
-# This is a sample Python script.
+class Bozo:
+    def __init__(self, value):
+        print('Creating a Bozo from:', value)
+        self.value = 2 * value
+    def clown(self, x):
+        print('Clowning: ', x)
+        print(x * self.value)
+        return x * self.value
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+def main():
+    print('Clowning around now...')
+
+    c1 = Bozo(3)
+    c2 = Bozo(4)
+    print(c1.clown(3))
+    print(c2.clown(c1.clown(2)))
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+main()
 
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
