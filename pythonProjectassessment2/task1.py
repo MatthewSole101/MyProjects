@@ -1,3 +1,16 @@
+
+def checkPrime(num):
+    if num == 2:
+        print(num, 'is a prime number')
+        primelist.append(num)
+    for i in range(2, num):
+        if num % i == 0:
+            break
+        else:
+            print(num, 'is a prime number')
+            primelist.append(num)
+            break
+
 list = []
 primelist = []
 #length of list
@@ -12,7 +25,7 @@ inp = int(input("Write a integer: "))
 list.append(inp)
 
 while inp != 00:
-    inp = int(input("Write another integer or stop by typing '00': "))
+    inp = int(input("Write another integer or stop by typing '0': "))
     list.append(inp)
     count = count + 1
 
@@ -33,19 +46,39 @@ while count != count2:
 else:
     print('The sum is', total)
 
-while count3 != count:
-    if list[count3] >1:
+# if list[count3] > 1:
+#
+#     for count3 in range(2, int(list[count3]/2)+1):
+#         if (list[count3] % count3) == 0:
+#             print(list[count3], "is NOT a prime number")
+#     else:
+#         print(list[count3], "is a prime number")
+#         primelist.append(list[count3])
+# else:
+#     print(list[count3], 'is not a prime number')
 
-        for i in range (2, list[count3]):
-            if (list[count3] % i) == 0:
-                isPrime = False
-            elif (list[count3] % i) != 0:
-                isPrime = True
-                primelist.append(list[count3])
+# for count3 in range(2, int(list[count3] / 2) + 1):
+#     if list[count3] <= 1:
+#         print(list[count3], 'is not a prime number')
+#     if list[count3] == 2:
+#         print(list[count3], 'is a prime number')
+#         primelist.append(list[count3])
+#     if list[count3] % count3 == 0:
+#         print(list[count3], 'is not a prime number')
+#     else:
+#         print(list[count3], 'is not a prime number')
+#         primelist.append(list[count3])
 
-
-
+while length != count3:
+    prime = list[count3]
+    checkPrime(prime)
     count3 = count3 + 1
+else:
+    print('The prime numbers are', primelist)
+
+
+
+
 
 
 lengthprime = len(primelist)
