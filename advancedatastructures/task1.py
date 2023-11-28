@@ -3,11 +3,10 @@ def next_ints():
 
     while count != length:
         num = list[count]
-        num = num - 1
+        num = num + 1
         newlist.append(num)
         count = count + 1
     else:
-        newlist.f
         print(newlist)
 
 list = []
