@@ -67,22 +67,6 @@ def display():
     print(board[5])
 
 
-def print_board(board, cell, row):
-    # This function should print the board at the terminal
-    # Inputs: board, a nested list which contains the current status of the board
-    for row in board:
-        print("|", end="")
-        for cell in row:
-            print(cell, end="|")
-        print()
-    print("---------------")
-    print(" 1 2 3 4 5 6 7 ")
-
-
-
-
-inpy = 0
-inpx = 0
 
 board = [["|", "", "", "", "", "", "", "", "|"],
             ["|", "", "", "", "", "", "", "", "|"],
