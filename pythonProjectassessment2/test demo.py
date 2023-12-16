@@ -1,5 +1,6 @@
 import time, random
 
+
 def PopOutPlayer1(y, x):
     if board[y][x] == 'X':
         board[y][x] = ''
@@ -8,6 +9,7 @@ def PopOutPlayer1(y, x):
         return None
     else:
         print("Input is invalid")
+
 
 def PopOutPlayer2(y, x):
     if board[y][x] == 'O':
@@ -19,26 +21,29 @@ def PopOutPlayer2(y, x):
         print("Input is invalid")
 
 
-def special_move(y,x):
+def special_move(y, x):
     for i in board[x]:
         if board[y][i] != '':
             board[y][i] = ''
     return board[y]
+
+
 def random_obstruct_cells():
-    rand = random.randint(1,6)
+    rand = random.randint(1, 6)
     count = 0
     no = 'N'
     count2 = 1
     while count != 3:
-        #y axis
-        board[0+count][rand].append(no)
-        board[0+count][rand+1].append(no)
+        # y axis
+        board[0 + count][rand].append(no)
+        board[0 + count][rand + 1].append(no)
         count = count + 1
+
 
 def remove_random_obstruct_cells():
     count = 0
     while count != 5:
-        if board [0][count] == 'N':
+        if board[0][count] == 'N':
             board[0][count] = ''
 
         if board[1][count] == 'N':
@@ -58,15 +63,14 @@ def remove_random_obstruct_cells():
 
         count = count + 1
 
+
 def check_winner():
+    # rows
 
-    #rows
-
-
-    #colums
-
+    # colums
 
     return
+
 
 def player1():
     x = 5
@@ -221,7 +225,6 @@ def player2():
 
 
 def display():
-
     print(board[0])
     print(board[1])
     print(board[2])
@@ -230,19 +233,16 @@ def display():
     print(board[5])
 
 
-
 board = [["|", "", "", "", "", "", "", "", "|"],
-            ["|", "", "", "", "", "", "", "", "|"],
-            ["|", "", "", "", "", "", "", "", "|"],
-            ["|", "", "", "", "", "", "", "", "|"],
-            ["|", "", "", "", "", "", "", "", "|"],
-            ["|", "", "", "", "", "", "", "", "|"]]
+         ["|", "", "", "", "", "", "", "", "|"],
+         ["|", "", "", "", "", "", "", "", "|"],
+         ["|", "", "", "", "", "", "", "", "|"],
+         ["|", "", "", "", "", "", "", "", "|"],
+         ["|", "", "", "", "", "", "", "", "|"]]
 count = 0
 count3 = 0
 display()
-
-
-
+print(len(board))
 while count != 42:
     # while count3 != 1:
     #     random_obstruct_cells()
@@ -250,7 +250,7 @@ while count != 42:
     player1()
     player2()
     count = count + 1
-    print("You have", 42-count, "goes left")
+    print("You have", 42 - count, "goes left")
     remove_random_obstruct_cells()
 
 else:
