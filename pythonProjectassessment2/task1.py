@@ -4,7 +4,7 @@ def checkPrime(num):
         print(num, 'is a prime number')
         primelist.append(num)
     for i in range(2, num):
-        if num % i == 0:
+        if num % i == 0 or num == 9:
             break
         else:
             print(num, 'is a prime number')
@@ -29,33 +29,19 @@ while inp != 00:
     list.append(inp)
     count = count + 1
 
-
 else:
-
     list.pop(-1)
     length = len(list)
     list.sort()
-
 
 while count != count2:
     total = total + list[count2]
     count2 = count2 + 1
 
-
-
-
-
-
 while length != count3:
     prime = list[count3]
     checkPrime(prime)
     count3 = count3 + 1
-
-
-
-
-
-
 
 lengthprime = len(primelist)
 mean = total/count
