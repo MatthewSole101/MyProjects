@@ -450,7 +450,7 @@ while not check_full():
 
 
 else:
-
+ #When the board[0] is full - the game is over and displays who wins
     print("GAME IS OVER")
 
 
