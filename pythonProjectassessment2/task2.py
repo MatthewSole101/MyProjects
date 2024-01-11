@@ -451,9 +451,14 @@ while not check_full():
 
 else:
 
+    print("GAME IS OVER")
+
 
     player1win = int(player1_winner())
     player2win = int(player2_winner())
+
+    print("Player 1 has",player1win, "points")
+    print("Player 2 has",player2win, "points")
 
     if player1win > player2win:
         print("Player1 has won!")
